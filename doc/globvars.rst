@@ -1,7 +1,7 @@
 Global variables
 =================
 
-These are global variables of the EDIpack2 library. They form a subset of the global variables of the EDIpack2 library. Along with all the other global variables, they can be set in the input file, and are read when calling the :func:`read_input` function.
+These are global variables of the edipy2 module. They form a subset of the global variables of the EDIpack2 library. Along with all the other global variables, they can be set in the input file, and are read when calling the :func:`read_input` function.
 
 The exposed global variables can be accessed as methods of the :class:`global_env` class.
 

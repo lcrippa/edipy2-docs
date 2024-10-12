@@ -30,7 +30,7 @@ Impurity Problem Initialization, Solution and Finalization
 
 
 
-.. function:: set_hloc(hloc=None,Nlat=None)
+.. function:: set_hloc(hloc,Nlat=None)
 
    This function sets the local Hamiltonian of the impurity problem. 
     
@@ -51,7 +51,7 @@ Impurity Problem Initialization, Solution and Finalization
    :param Nlat: Number of inequivalent sites for real-space DMFT. The function will raise a ValueError if the dimensions of ``hloc`` are inconsistent with the presence or absence of Nlat. 
     The EDIpack2 library will check the correctness of the dimensions of ``hloc`` and terminate execution if inconsistent.
    
-   :raise ValueError: If hloc is not provided (as in edipy1) or has the wrong shape
+   :raise ValueError: If hloc is not provided or has the wrong shape
    
    :return: Nothing
    :rtype: None

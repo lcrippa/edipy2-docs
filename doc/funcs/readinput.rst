@@ -8,7 +8,7 @@ Input file manipulation
    the DMFT loop with the current value of the input variables.
 
    :param input_string: The name of the input file to be read, including the extension
-   :type param1: str
+   :type input_string: str
    :return: Nothing
    :rtype: None
 

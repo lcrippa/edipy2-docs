@@ -17,7 +17,7 @@ Environment initialization
    
     The array is ordered in F convention inside the function.
     
-   :type Nlat: np.array(dtype=int)
+   :type Nlat: int
    :param Nlat: Number of inequivalent sites for real-space DMFT. The function will raise a ValueError if the dimensions of :code:`hloc` are inconsistent with the presence or absence of Nlat. 
     The EDIpack2 library will check the correctness of the dimensions of :code:`hloc` and terminate execution if inconsistent.
    

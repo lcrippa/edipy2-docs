@@ -27,8 +27,12 @@ These functions initialize, solve and finalize the impurity problem. They can be
    :return: An array of floats that contains the bath parameters for the impurity problem. This is a required input of :func:`solve` and :func:`chi2_fitgf`. Its elements are ordered differently depending on the bath geometry. They are (de)compactified for user interaction via :func:`bath_packaging`. Specific symmetrization operations are implemented and listed in the :ref:`bath` section.
    :rtype: np.array(dtype=float) 
     
+.. function:: finalize_solver()
 
-
+   This function cleans up the ED environment, deallocates the relevant arrays and makes a second call to :command:`init_solver` possible
+           
+   :return: Nothing
+   :rtype: None
 
 
 .. function:: set_hloc(hloc,Nlat=None)
@@ -80,10 +84,4 @@ These functions initialize, solve and finalize the impurity problem. They can be
    :return: Nothing
    :rtype: None
 
-.. function:: finalize_solver()
-
-   This function cleans up the ED environment, deallocates the relevant arrays and makes a second call to :command:`init_solver` possible
-           
-   :return: Nothing
-   :rtype: None
 

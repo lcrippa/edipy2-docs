@@ -20,21 +20,21 @@ The exposed global variables can be accessed as methods of the :class:`global_en
 
    Value of the inverse temperature, at T=0 is used as a IR cut-off
    
-   :type: real
+   :type: float
    :default: 1000.0
 
 .. data:: Jh
 
    Value of the Hund's coupling
    
-   :type: real
+   :type: float
    :default: 0.0
    
 .. data:: dmft_error
 
    Error threshold for DMFT convergence
    
-   :type: real
+   :type: float
    :default: 1e-05
    
 .. data:: ed_total_ud
@@ -53,23 +53,23 @@ The exposed global variables can be accessed as methods of the :class:`global_en
    
 .. data:: eps
 
-   Broadening on the real-axis
+   Broadening on the float-axis
    
-   :type: real
+   :type: float
    :default: 1e-02
 
 .. data:: Jx
 
    Value of the spin exchange coupling
    
-   :type: real
+   :type: float
    :default: 0.0
 
 .. data:: Jp
 
    Value of the pair hopping coupling
    
-   :type: real
+   :type: float
    :default: 0.0
 
 .. data:: Lmats
@@ -94,9 +94,9 @@ The exposed global variables can be accessed as methods of the :class:`global_en
    :default: 100
 
 
-.. data:: Lreal
+.. data:: Lfloat
 
-   Number of frequencies, real frequency axis
+   Number of frequencies, float frequency axis
    
    :type: int
    :default: 5000
@@ -141,7 +141,7 @@ The exposed global variables can be accessed as methods of the :class:`global_en
    Value of the target density for fixed density calculations.
    If valued 0, it is discarded.
    
-   :type: real
+   :type: float
    :default: 0.0
 
 .. data:: Nspin
@@ -164,7 +164,7 @@ The exposed global variables can be accessed as methods of the :class:`global_en
 
    Value of a symmetry breaking field for magnetic solutions
    
-   :type: real
+   :type: float
    :default: 0.1
 
 
@@ -172,42 +172,42 @@ The exposed global variables can be accessed as methods of the :class:`global_en
 
    Values of the local interaction per orbital (max 5). If less values are provided, the array is filled in increasing order
    
-   :type: real
+   :type: float
    :default: [2.0, 0.0, 0.0, 0.0, 0.0]
    
 .. data:: Ust
 
    Value of the inter-orbital interaction term
    
-   :type: real
+   :type: float
    :default: 0.0
    
 .. data:: wini
 
-   Value of the smallest real-axis frequency
+   Value of the smallest float-axis frequency
    
-   :type: real
+   :type: float
    :default: -5.0
    
 .. data:: wfin
 
-   Value of the largest real-axis frequency
+   Value of the largest float-axis frequency
    
-   :type: real
+   :type: float
    :default: -5.0
    
 .. data:: xmin
 
    Value for the smallest position for the lattice PDF
    
-   :type: real
+   :type: float
    :default: -3.0
 
 .. data:: xmax
 
    Value for the largest position for the lattice PDF
    
-   :type: real
+   :type: float
    :default: 3.0
 
    
@@ -215,6 +215,6 @@ The exposed global variables can be accessed as methods of the :class:`global_en
 
    Value of the chemical potential. If HFMODE = T, xmu=0 satisfied the half-filling condition
    
-   :type: real
+   :type: float
    :default: 0.0
 

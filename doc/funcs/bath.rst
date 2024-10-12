@@ -1,3 +1,5 @@
+.. _bath:
+
 Bath Manipulation
 ===========================
 

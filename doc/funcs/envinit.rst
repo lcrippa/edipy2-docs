@@ -4,31 +4,26 @@ Impurity Problem Initialization, Solution and Finalization
 ================================================================
 
 
-.. function:: init_solver()
+.. function:: init_solver(bath=None, Nb=None, Nlat=None)
 
    This function initializes the ED environment for the impurity problem solution, and sets the bath reading it from the ``hamiltonian.restart`` file or initializing it in a symmetric way.
-   The function can take different argument combinations.
-
-   :type empty: None
-   :param empty: If no argument is provided, a bath array is initialized automatically by the module for a single-site impurity problem with the specified bath geometry and number of levels.
+   The function can take different argument combinations. 
+   
+   If no input is provided, a single-impurity bath is allocated, with dimension given by :func:`get_bath_dimension`.
 
     
    :type bath: np.array(dtype=float) **or** [float]
-   :param bath: If a bath array is provided, it has to be a numpy array or a tuple of floats. It has to have a specific length, as specified by :func:`get_bath_dimension`
-   
-   
+   :param bath: If a bath array is provided, it has to be a numpy array or a tuple of floats. It has to have one or two dimensions. If it has one dimension, that must be the same as specified by :func:`get_bath_dimension`. If it has two dimensions, the first has to be the number of inequivalent sites for real-space DMFT, the second must be in agreement with :func:`get_bath_dimension`. If ``Nlat`` or ``Nb`` are provided, this overrides them. If the provided vector is not in agreement with the global system parameters, EDIpack2 will exit with an error.
     The array is ordered in F convention inside the function.
+        
+   :type Nb: int 
+   :param Nb: This sets the bath vector length for each single impurity problem. It has to be in agreement with :func:`get_bath_dimension`. When this parameter alone is provided, a numpy array of this length will be initialized.
     
-    **Note**: if the dimension of the bath is at odds with the global system parameters, EDIpack2 will terminate execution with an error.
-    
-   :type dimension: int **or** [int]
-   :param dimension: If an integer or a tuple of length 1 number is provided, a bath is initialized with that dimension
-    
-   :type dimensions: [int,int]
-   :param dimensions: If a tuple of length 2 is provided, a bath is initialized with that shape. The first dimension is the number of inequivalent sites for real-space DMFT, the second is the bath size for each inequivalent site.
+   :type Nlat: int 
+   :param Nlat: This sets the number of inequivalent sites for real-space DMFT. If this parameter alone is provided, :func:`get_bath_dimension` is invoked to determine the bath vector length Nb for each impurity. A ``[Nlat,Nb]`` vector is then allocated.
    
      
-   :return: An array of floats that contains the bath parameters for the impurity problem. This is a required input of :command:`solve` and :command:`chi2_fitgf`. Its components are ordered differently depending on the bath geometry. They are (de)compactified for user interaction via :command:`bath_packaging`. Specific symmetrization operations are implemented and listed in the :ref:`bath` section.
+   :return: An array of floats that contains the bath parameters for the impurity problem. This is a required input of :func:`solve` and :func:`chi2_fitgf`. Its elements are ordered differently depending on the bath geometry. They are (de)compactified for user interaction via :func:`bath_packaging`. Specific symmetrization operations are implemented and listed in the :ref:`bath` section.
    :rtype: np.array(dtype=float) 
     
 

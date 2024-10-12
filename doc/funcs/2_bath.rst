@@ -44,7 +44,7 @@ These functions manipulate the user-accessible bath array
    
  
    :type ispin: int 
-   :param ispin: spin species to be fitted. If :code:`ed.Nspin=2`, the fitting function needs to be called twice. Only the corresponding elements of :code:`bath` will be updated each time
+   :param ispin: spin species to be fitted. For the normal and superconducting cases, if :code:`ed.Nspin=2`, the fitting function needs to be called twice. Only the corresponding elements of :code:`bath` will be updated each time. For the non-SU(2) case, this argument is irrelevant, since all the elements of the Weiss/Delta function need to be fitted.
     
    :type iorb: int 
    :param iorb: the orbital to be fitted. If omitted, all orbitals will be fitted
@@ -57,9 +57,6 @@ These functions manipulate the user-accessible bath array
      
    :return: An array of floats that contains the bath parameters for the impurity problem. This is a required input of :func:`solve` and :func:`chi2_fitgf`. Its elements are ordered differently depending on the bath geometry. They are (de)compactified for user interaction via :func:`bath_packaging`. Specific symmetrization operations are implemented and listed in the :ref:`bath` section.
    :rtype: np.array(dtype=float) 
-
-
-
 
 
 .. function:: get_bath_dimension()

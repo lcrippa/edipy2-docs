@@ -13,7 +13,7 @@ These functions pass to the userspace the observables and response functions cal
    :type ishape: int 
    :param ishape: this variable determines the shape of the returned array. Possible values:
    
-    * :code:`default`: the same shape as :code:`Hloc` plus one axis for frequency 
+    * :code:`None`: the same shape as :code:`Hloc` plus one axis for frequency 
     * :code:`3`: in the single-site case, it will return an array of the shape :code:`[ed.Nspin*ed.Norb, ed.Nspin*ed.Norb, Nfrequencies=ed.Lmats/ed.Lreal]`. In the real-space DMFT case, it will return an array of the shape :code:`[Nlat*ed.Nspin*ed.Norb, Nlat*ed.Nspin*ed.Norb, Nfrequencies=Lmats/Lreal]`. :code:`Nlat` will be determined from the module by assessing the shape of Hloc. If :code:`ilat` is set, ValueError is returned.
     * :code:`4`: in the real-space DMFT case, it will return an array of the shape :code:`[Nlat, ed.Nspin*ed.Norb, ed.Nspin*ed.Norb, Nfrequencies=ed.Lmats/ed.Lreal]`. :code:`Nlat` will be determined from the module by assessing the shape of Hloc. If :code:`ilat` is set, the output will have one dimension less.
     * :code:`5`: in the single-site case, it will return an array of the shape :code:`[ed.Nspin, ed.Nspin, ed.Norb, ed.Norb, Nfrequencies=Lmats/Lreal]`.
@@ -48,7 +48,7 @@ These functions pass to the userspace the observables and response functions cal
    :type ishape: int 
    :param ishape: this variable determines the shape of the returned array. Possible values:
    
-    * :code:`default`: the same shape as :code:`Hloc` plus one axis for frequency 
+    * :code:`None`: the same shape as :code:`Hloc` plus one axis for frequency 
     * :code:`3`: in the single-site case, it will return an array of the shape :code:`[ed.Nspin*ed.Norb, ed.Nspin*ed.Norb, len(zeta)]`. In the real-space DMFT case, it will return an array of the shape :code:`[Nlat*ed.Nspin*ed.Norb, Nlat*ed.Nspin*ed.Norb, len(zeta)]`. :code:`Nlat` will be determined from the module by assessing the shape of Hloc. If :code:`ilat` is set, ValueError is returned.
     * :code:`4`: in the real-space DMFT case, it will return an array of the shape :code:`[Nlat, ed.Nspin*ed.Norb, ed.Nspin*ed.Norb, len(zeta)`. :code:`Nlat` will be determined from the module by assessing the shape of Hloc. If :code:`ilat` is set, the output will have one dimension less.
     * :code:`5`: in the single-site case, it will return an array of the shape :code:`[ed.Nspin, ed.Nspin, ed.Norb, ed.Norb, len(zeta)]`.
@@ -76,7 +76,7 @@ These functions pass to the userspace the observables and response functions cal
    :type ishape: int 
    :param ishape: this variable determines the shape of the returned array. Possible values:
    
-    * :code:`default`: the same shape as :code:`Hloc` plus one axis for frequency 
+    * :code:`None`: the same shape as :code:`Hloc` plus one axis for frequency 
     * :code:`3`: in the single-site case, it will return an array of the shape :code:`[ed.Nspin*ed.Norb, ed.Nspin*ed.Norb, Nfrequencies=ed.Lmats/ed.Lreal]`. In the real-space DMFT case, it will return an array of the shape :code:`[Nlat*ed.Nspin*ed.Norb, Nlat*ed.Nspin*ed.Norb, Nfrequencies=Lmats/Lreal]`. :code:`Nlat` will be determined from the module by assessing the shape of Hloc. If :code:`ilat` is set, ValueError is returned.
     * :code:`4`: in the real-space DMFT case, it will return an array of the shape :code:`[Nlat, ed.Nspin*ed.Norb, ed.Nspin*ed.Norb, Nfrequencies=ed.Lmats/ed.Lreal]`. :code:`Nlat` will be determined from the module by assessing the shape of Hloc. If :code:`ilat` is set, the output will have one dimension less.
     * :code:`5`: in the single-site case, it will return an array of the shape :code:`[ed.Nspin, ed.Nspin, ed.Norb, ed.Norb, Nfrequencies=Lmats/Lreal]`.
@@ -114,7 +114,7 @@ These functions pass to the userspace the observables and response functions cal
    :type ishape: int 
    :param ishape: this variable determines the shape of the returned array. Possible values:
    
-    * :code:`default`: the same shape as :code:`Hloc` plus one axis for frequency 
+    * :code:`None`: the same shape as :code:`Hloc` plus one axis for frequency 
     * :code:`3`: in the single-site case, it will return an array of the shape :code:`[ed.Nspin*ed.Norb, ed.Nspin*ed.Norb, len(zeta)]`. In the real-space DMFT case, it will return an array of the shape :code:`[Nlat*ed.Nspin*ed.Norb, Nlat*ed.Nspin*ed.Norb, len(zeta)]`. :code:`Nlat` will be determined from the module by assessing the shape of Hloc. If :code:`ilat` is set, ValueError is returned.
     * :code:`4`: in the real-space DMFT case, it will return an array of the shape :code:`[Nlat, ed.Nspin*ed.Norb, ed.Nspin*ed.Norb, len(zeta)`. :code:`Nlat` will be determined from the module by assessing the shape of Hloc. If :code:`ilat` is set, the output will have one dimension less.
     * :code:`5`: in the single-site case, it will return an array of the shape :code:`[ed.Nspin, ed.Nspin, ed.Norb, ed.Norb, len(zeta)]`.

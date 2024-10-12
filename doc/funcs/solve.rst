@@ -1,7 +1,0 @@
-Impurity problem solver
-===========================
-
-
-
-
-

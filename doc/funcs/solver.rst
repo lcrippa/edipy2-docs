@@ -1,8 +1,9 @@
-.. _envinit:
+.. _solver:
 
 Impurity Problem Initialization, Solution and Finalization
 ================================================================
 
+These functions initialize, solve and finalize the impurity problem. They can be invoked inside or outside the DMFT loop. The solution environment can be completely reconstructed from the bath parameters array and the global variables.
 
 .. function:: init_solver(bath=None, Nb=None, Nlat=None)
 

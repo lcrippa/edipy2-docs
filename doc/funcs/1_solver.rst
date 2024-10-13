@@ -70,13 +70,13 @@ These functions initialize, solve and finalize the impurity problem. They can be
    :param bath: The bath array returned by  :func:`init_solver`. If the bath dimensions are inconsistent with the global properties of the problem, EDIpack2 will exit with an error.
    
    :type sflag: bool
-   :param sflag: for single-site DMFT, if :code:`False`, it disables the calculation of the Green's function and susceptibilities
+   :param sflag: for single-impurity DMFT, if :code:`False`, it disables the calculation of the Green's function and susceptibilities
    
    :type iflag: bool
    :param iflag: for real-space DMFT, if :code:`False`, it disables the calculation of the Green's function and susceptibilities
    
    :type fmpi: bool
-   :param fmpi: if :code:`False`, for single-site DMFT, it disables MPI for the ED routine, if the communicator is used elsewhere
+   :param fmpi: if :code:`False`, for single-impurity DMFT, it disables MPI for the ED routine, if the communicator is used elsewhere
    
    :type mpi_lanc: bool
    :param mpi_lanc: if :code:`True`, for real-space DMFT sets the MPI parallelization for the ED routine. By default it is :code:`False`, and each inequivalent site is solved serially by a different core.

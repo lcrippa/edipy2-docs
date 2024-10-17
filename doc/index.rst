@@ -45,6 +45,7 @@ An updated manuscript will be released soon.
    :maxdepth: 2
 
    fortran_src/edipack2
+   python_api/edipy2
 
 
 

@@ -1,5 +1,4 @@
 MODULE ED_AUX_FUNX
-  ! Module ausiliary functions
   USE ED_INPUT_VARS
   USE ED_VARS_GLOBAL
   USE SF_TIMER
@@ -9,13 +8,11 @@ MODULE ED_AUX_FUNX
   USE SF_IOTOOLS, only:free_unit,reg,txtfy
   USE SF_ARRAYS,  only: arange,linspace
   implicit none
-  
   private
-   
+
   !> ED SET HLOC
   interface ed_set_Hloc
-    !Mannaggia a te
-     module procedure ed_set_Hloc_single_N2, ed_set_Hloc_single_N4, ed_set_Hloc_lattice_N2, ed_set_Hloc_lattice_N3, ed_set_Hloc_lattice_N5
+     module procedure ed_set_Hloc_single_N2,ed_set_Hloc_single_N4,ed_set_Hloc_lattice_N2,ed_set_Hloc_lattice_N3,ed_set_Hloc_lattice_N5
   end interface ed_set_Hloc
 
   interface lso2nnn_reshape
@@ -111,8 +108,7 @@ MODULE ED_AUX_FUNX
 
   !MPI PROCEDURES
 #ifdef _MPI
-  interface scatter_vector_MPI      !Diomadonna 
-     ! L'uomo cane
+  interface scatter_vector_MPI
      module procedure :: d_scatter_vector_MPI
      module procedure :: c_scatter_vector_MPI
   end interface scatter_vector_MPI
@@ -142,7 +138,6 @@ contains
 
 
   subroutine ed_reset_suffix()
-    !cane le carte co la cola
     ed_file_suffix=''
   end subroutine ed_reset_suffix
 
@@ -159,8 +154,17 @@ contains
     ed_file_suffix=reg(ineq_site_suffix)//str(indx)
   end subroutine ed_set_suffix_c
 
+
+  !##################################################################
+  !##################################################################
+  !##################################################################
+  !##################################################################
+
+
+  !+------------------------------------------------------------------+
+  !PURPOSE  : Setup Himpurity, the local part of the non-interacting Hamiltonian
+  !+------------------------------------------------------------------+
   subroutine ed_set_Hloc_single_N2(Hloc)
-    !interface della madonna zio castoro
     complex(8),dimension(:,:),intent(in) :: Hloc
 #ifdef _DEBUG
     write(Logfile,"(A)")"DEBUG ed_set_Hloc: set impHloc"
@@ -175,7 +179,6 @@ contains
   end subroutine ed_set_Hloc_single_N2
 
   subroutine ed_set_Hloc_single_N4(Hloc)
-    !buon compleanno
     complex(8),dimension(:,:,:,:),intent(in) :: Hloc
 #ifdef _DEBUG
     write(Logfile,"(A)")"DEBUG ed_set_Hloc: set impHloc"
@@ -399,7 +402,6 @@ contains
 #ifdef _MPI
   !! Scatter V into the arrays Vloc on each thread: sum_threads(size(Vloc)) must be equal to size(v)
   subroutine d_scatter_vector_MPI(MpiComm,v,vloc)
-    !L'indimenticabile donna ragno
     integer                          :: MpiComm
     real(8),dimension(:)             :: v    !size[N]
     real(8),dimension(:)             :: vloc !size[Nloc]

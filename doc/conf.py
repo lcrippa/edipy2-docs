@@ -66,7 +66,6 @@ source_suffix = '.rst'
 
 
 fortran_src=[os.path.abspath('../src/*.f90'),]
-fortran_show_access = 'public'
 
 #DEFAULT
 fortran_ext=['f90', 'f95']

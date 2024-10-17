@@ -1,0 +1,12 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=${prefix}/bin
+includedir=${prefix}/include
+libdir=${prefix}/lib
+
+Name: edipack2
+Description: The EDIpack2.0 library
+Cflags: -I${includedir}
+Libs: -L${libdir} -ledipack2
+Version:@VERSION@
+
+

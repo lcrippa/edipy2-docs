@@ -12,7 +12,7 @@ MODULE ED_AUX_FUNX
 
   !> ED SET HLOC
   interface ed_set_Hloc
-     module procedure ed_set_Hloc_single_N2,ed_set_Hloc_single_N4,ed_set_Hloc_lattice_N2,ed_set_Hloc_lattice_N3,ed_set_Hloc_lattice_N5
+     module procedure ed_set_Hloc_lattice_N5,ed_set_Hloc_single_N2,ed_set_Hloc_single_N4,ed_set_Hloc_lattice_N2,ed_set_Hloc_lattice_N3
   end interface ed_set_Hloc
 
   interface lso2nnn_reshape
@@ -225,8 +225,9 @@ contains
   end subroutine ed_set_Hloc_lattice_N3
 
   subroutine ed_set_Hloc_lattice_N5(Hloc,Nlat)
-    complex(8),dimension(:,:,:,:,:),intent(in) :: Hloc
-    integer                                    :: Nlat,ilat
+    complex(8),dimension(:,:,:,:,:),intent(in) :: Hloc !Local Hamiltonian
+    integer                                    :: Nlat !Number of impurity sites (for real-space DMFT)
+    integer                                    :: ilat
 #ifdef _DEBUG
     write(Logfile,"(A)")"DEBUG ed_set_Hloc: set impHloc"
 #endif
